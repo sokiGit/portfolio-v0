@@ -1,0 +1,55 @@
+---
+import Layout from "../../layouts/Layout.astro"
+---
+
+<Layout>
+    <h1>Hello, World!</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque odit, reiciendis suscipit inventore nulla ex nihil quam culpa autem officiis. Sit distinctio nihil vero architecto maiores dicta ipsa amet delectus.</p>
+
+    <form action="login" method="post">
+        <input type="text" name="username" id="username" placeholder="Username">
+        <input type="password" name="password" id="password" placeholder="Password">
+        <input type="submit" value="Log in">
+    </form>
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+            align-items: center;
+            margin: 2rem auto;
+            width: min(50ch, 95%, calc(100% - 1ch));
+            &>*{
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight: 400;
+            }
+        }
+
+        #username, #password {
+            width: 40rem;
+            height: 2.5rem;
+            padding-inline: .5rem;
+            border-radius: .8rem;
+            color: #e94d74;
+            border: 1px solid transparent;
+            background: 
+                linear-gradient(66.77deg, #f3cddd 0%, #f5cee7 100%) padding-box,
+                linear-gradient(155deg, #d83333 0%, #f041ff 18%, #f5cee7 100%) border-box;
+            font-size: 1.25rem;
+        }
+
+        input[type="submit"] {
+            height: 3rem;
+            width: 15rem;
+            background: linear-gradient(-35deg, #e94d74 0%, #f041ff 18%, #f5cee7 100%);
+            box-shadow: 0 0 1px inset #fff;
+            border: none;
+            border-radius: .9rem;
+            cursor: pointer;
+            color: #fff;
+            font-weight: 900;
+            font-size: 1.5rem;
+        }
+
+    </style>
+</Layout>

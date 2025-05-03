@@ -1,0 +1,167 @@
+---
+// src/components/Header.astro
+
+// Receive the prop using Astro.props
+const currentPath = Astro.url.pathname;
+
+// Define your navigation links (adjust hrefs to match your page paths)
+const navLinks = [
+  { name: 'Home', href: '/' },
+  { name: 'About', href: '/about/' },      // Astro pages in folders get trailing slashes
+  { name: 'Projects', href: '/projects/' }, // e.g., src/pages/projects.astro -> /projects/
+  { name: 'Contact', href: '/contact/' },
+];
+---
+
+<header>
+    <a class="headerTitle" href="/">
+        <img src="/src/assets/pageIcon.svg" alt="icon">
+        <h1>soki</h1>
+    </a>
+    <nav>
+        {navLinks.map((link) => (
+            <li>
+              <a
+                href={link.href}
+                class={currentPath === link.href ? 'active' : ''}
+              >
+                {link.name}
+              </a>
+            </li>
+          ))}
+    </ul>
+</header>
+
+<style>
+    header {
+        --header-height: 3rem;
+
+        padding-inline: max(10%, 1rem);
+
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: space-between;
+
+        width: 100%;
+        min-height: var(--header-height);
+        box-sizing: border-box;
+
+        background-color: #2228;
+        backdrop-filter: blur(calc(2 * var(--header-height)));
+
+        border-bottom: 1px solid #fff1;
+    }
+
+    nav {
+        margin: 0;
+        padding: 0;
+
+        display: flex;
+        flex-flow: row wrap;
+
+        list-style: none;
+
+        & > li > a {
+            position: relative;
+
+            padding-inline: 1em;
+
+            box-sizing: border-box;
+            overflow: hidden;
+
+            font-size: calc(var(--header-height) * .35);
+            
+            &, &::after, &::before {
+                transition: all .25s cubic-bezier(0.075, 0.82, 0.165, 1);
+            }
+
+            &::after {
+                content: '';
+
+                position: absolute;
+
+                width: 0;
+                height: calc(var(--header-height) / 24);
+
+                border-top-left-radius: calc(var(--header-height) / 24);
+                border-top-right-radius: calc(var(--header-height) / 24);
+
+                background-color: var(--blue-100);
+
+                bottom: 0;
+                left: 50%;
+
+                transform: translateX(-50%);
+
+                box-shadow: 0 0 calc(var(--header-height) / 3) calc(var(--header-height) / 30) var(--blue-100);
+            }
+
+            &::before {
+                content: '';
+
+                position: absolute;
+
+                bottom: -100%;
+                left: 50%;
+
+                transform: translate(-50%, 50%);
+
+                border-radius: 50%;
+
+                width: 150%;
+                height: 100%;
+
+                background-color: color-mix(in srgb, transparent 50%, var(--blue-200));
+
+                filter: blur(calc(var(--header-height) / 2));
+            }
+
+            &:hover, &:hover::after, &:hover::before {
+                transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+            }
+
+            &:hover, &.active {
+                color: var(--blue-100);
+
+                &::before {
+                    background-color: color-mix(in srgb, transparent 50%, var(--blue-200));
+                    bottom: 0;
+                }
+
+                &::after {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    a {
+        height: var(--header-height);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        text-decoration: none;
+        color: #fff;
+    }
+
+    .headerTitle {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        gap: .75rem;
+
+        & > h1 {
+            margin: 0;
+            
+            font-size: calc(var(--header-height) / 2);
+        }
+        
+        & > img {
+            height: calc(var(--header-height) / 3 * 1.75);
+            width: auto;
+        }
+    }
+</style>

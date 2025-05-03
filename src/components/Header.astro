@@ -7,9 +7,9 @@ const currentPath = Astro.url.pathname;
 // Define your navigation links (adjust hrefs to match your page paths)
 const navLinks = [
   { name: 'Home', href: '/' },
-  { name: 'About', href: '/about/' },      // Astro pages in folders get trailing slashes
-  { name: 'Projects', href: '/projects/' }, // e.g., src/pages/projects.astro -> /projects/
-  { name: 'Contact', href: '/contact/' },
+  { name: 'About', href: '/about' },      // Astro pages in folders get trailing slashes
+  { name: 'Projects', href: '/projects' }, // e.g., src/pages/projects.astro -> /projects/
+  { name: 'Contact', href: '/contact' },
 ];
 ---
 
@@ -23,7 +23,7 @@ const navLinks = [
             <li>
               <a
                 href={link.href}
-                class={currentPath === link.href ? 'active' : ''}
+                class={currentPath.startsWith(link.href) && link.href !== "/" || link.href === "/" && currentPath === "/" ? 'active' : ''}
               >
                 {link.name}
               </a>

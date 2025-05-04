@@ -5,5 +5,159 @@ import Header from "../components/Header.astro"
 
 <Layout>
     <Header/>
-    Hello, World!
+    <main>
+        <h1>About Me</h1>
+        <p>
+            Hello, I'm <b style="color: var(--blue-100)">soki</b>, a passionate young <b style="color: var(--blue-100);">web and game developer</b>, <b style="color: var(--blue-100)">cybersecurity enthusiast</b> and <b style="color: var(--blue-100);">IT student</b>.<br/>
+            I love everything that revolves around computers and technology and love exploring new areas and learning new skills.
+        </p>
+        
+        <h2>Cybersecurity</h2>
+        <p>
+            I have been interested in cybersecurity for many years now and have learned many things on platforms like <b style="color: var(--blue-100);">HackTheBox</b>, <b style="color: var(--blue-100);">TryHackMe</b>, <b style="color: var(--blue-100);">Haxagon</b>, and various other CTF or "chall" sites.<br/>
+            I even took a shot at bug bounties, with underwhelming results. :(
+        </p>
+        
+        <h2>Game Dev</h2>
+        <p>
+            For several years, I have immersed myself in game development on <b style="color: var(--blue-100);">Roblox</b>, contributing to various small projects, primarily by creating and scripting <b style="color: var(--blue-100);">user interfaces</b>.<br/>
+            I have also experimented with other engines like <b style="color: var(--blue-100);">Unity</b>, <b style="color: var(--blue-100);">Unreal Engine</b>, and <b style="color: var(--blue-100);">Godot</b>, as I felt that the Roblox engine was too limiting in certain ways. I particularly working with Godot, which provided me the opportunity to try out programming in <b style="color: var(--blue-100);">C# .NET</b>.
+        </p>
+        
+        <h2>Web Dev & Design</h2>
+        <p>
+            I have designed and built websites for many years. Most of these were just practice projects that helped me improve in various aspects like web design, JavaScript, or building responsive websites.<br/>
+            I have written quite a lot of websites in plain <b style="color: var(--blue-100);">HTML</b>, <b style="color: var(--blue-100);">CSS</b> and <b style="color: var(--blue-100);">JavaScript</b>, as well as <b style="color: var(--blue-100);">jQuery</b>. I took a stab at frameworks too, like <b style="color: var(--blue-100);">React</b> or <b style="color: var(--blue-100);">Svelte</b>. And this site is made using <b style="color: var(--blue-100);">Astro</b>.
+        </p>
+        
+        <h2>Education</h2>
+        <p>
+            I am currently attending a <b style="color: var(--blue-100);">high school</b> specialising in IT, with plans to take to focus on <b style="color: var(--blue-100);">Computer Networks & Cyber Security</b> in my specialised classes.<br/>
+            Looking ahead, I'm excited to pursue my studies at the <b style="color: var(--blue-100);">Faculty of Applied Sciences</b> at the <b style="color: var(--blue-100);">University of West Bohemia</b>.<br/>
+            My long-term goal is to progress through Bachelor's (<b style="color: var(--blue-100);">Software Engineering</b>), Master's (<b style="color: var(--blue-100);">Software and Information Systems</b>), and potentially a Ph.D. in <b style="color: var(--blue-100);">Computer Science</b>, depending on future opportunities.
+        </p>
+
+        <h2>Interests</h2>
+        <p>
+            I'm a person of many interests, you might even say that I'm a generalist rather than a specialist. I like to discover and learn new things and I try to get some knowledge and experience in every new area I discover.<br/>
+            Here are my main interests and areas I have explored:
+            <ul class="flex-block-list">
+                <li>
+                    Computers
+                    <ul>
+                        <li>Cybersecurity</li>
+                        <li>Web design & development</li>
+                        <li>UI/UX design</li>
+                        <li>Game development</li>
+                        <li>Computer hardware</li>
+                        <li>Programming languages</li>
+                        <li>Hardware hacking</li>
+                        <li>Digital privacy & anonymity online</li>
+                    </ul>
+                </li>
+                <li>
+                    Science
+                    <ul>
+                        <li>Understanding physics in general</li>
+                        <li>Quantum mechanics & quantum computing</li>
+                        <li>Longevity research</li>
+                        <li>Chemistry in general</li>
+                        <li>Psychology - understanding human behaviour</li>
+                        <li>Astronomy (and astrophotography)</li>
+                    </ul>
+                </li>
+                <li>
+                    Physical protection - firearms, materials, architecture, etc.
+                    <ul>
+                        <li>CCTV and other physical&cyber security systems</li>
+                        <li>Designing resilient architecture</li>
+                        <li>Ballistic glass standards (UL 752)</li>
+                        <li>Bullet standards</li>
+                        <li>Firearm safety, CQB, first aid</li>
+                        <li>Low-vis tactical gear</li>
+                    </ul>
+                </li>
+                <li>
+                    Free time activities & communities 
+                    <ul>
+                        <li>Gaming</li>
+                        <li>Furry</li>
+                        <li>Drawing</li>
+                        <li>Learning</li>
+                    </ul>
+                </li>
+            </ul>
+        </p>
+    </main>
 </Layout>
+
+<style>
+    main {
+        margin: 1rem auto;
+        padding: 1.5rem 2.25rem;
+
+        background: #fff1;
+        border-radius: .5rem;
+
+        max-width: calc(100% - .5rem);
+        width: max(50%, 80ch);
+        box-sizing: border-box;
+    }
+
+    h1, h2 {
+        color: var(--blue-100);
+        margin-bottom: .75rem;
+    }
+
+    p {
+        padding-inline-start: .75rem;
+        border-left: var(--blue-100) 2px solid;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+    }
+
+    h1 {
+        margin-top: 0;
+    }
+
+    .flex-block-list {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 1rem;
+
+        padding-inline: 1rem;
+
+        color: var(--blue-100);
+        font-weight: bold;
+        
+        &>li {
+            padding-inline: .5em;
+            padding-block: .25em .75em;
+
+            flex-grow: 1;
+            
+            list-style: none;
+            background-color: #fff1;
+            border-radius: .8rem;
+
+            & ul {
+                padding-left: 1.25em;
+
+                list-style: disc;
+                
+                color: #fff;
+                font-weight: normal;
+            }
+        }
+    }
+
+    @media (aspect-ratio < .7) {
+        main {
+            width: calc(100% - 1rem);
+        }
+
+        .flex-block-list {
+            padding-inline: .125rem;
+        }
+    }
+</style>

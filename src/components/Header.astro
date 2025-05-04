@@ -27,6 +27,24 @@ const navLinks = [
               >
                 {link.name}
               </a>
+              {link.name === 'Projects' ? 
+              <ul class="header-nav-dropdown">
+                <li>
+                    <a href="/projects/project-a">Project A</a>
+                </li>
+                <li>
+                    <a href="/projects/project-b">Project B</a>
+                </li>
+                <li>
+                    <a href="/projects/project-c">Project C</a>
+                </li>
+                <li>
+                    <a href="/projects/project-d">Project D</a>
+                </li>
+                <li>
+                    <a href="/projects/project-e">Project E</a>
+                </li>
+              </ul> : null}
             </li>
           ))}
     </ul>
@@ -61,6 +79,16 @@ const navLinks = [
         flex-flow: row wrap;
 
         list-style: none;
+
+        & > li {
+            position: relative;
+
+            &:hover > .header-nav-dropdown {
+                clip-path: rect(auto auto auto auto);
+                
+                transition: clip-path .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+            }
+        }
 
         & > li > a {
             position: relative;
@@ -102,7 +130,7 @@ const navLinks = [
 
                 position: absolute;
 
-                bottom: -100%;
+                bottom: -150%;
                 left: 50%;
 
                 transform: translate(-50%, 50%);
@@ -162,6 +190,91 @@ const navLinks = [
         & > img {
             height: calc(var(--header-height) / 3 * 1.75);
             width: auto;
+        }
+    }
+
+    .header-nav-dropdown {
+        padding: 0;
+        margin: 0;
+        
+        position: absolute;
+        top: 100%;
+        right: 0;
+
+        width: max-content;
+        min-width: 100%;
+        max-width: 100%;
+        height: fit-content;
+
+        background: #fff1;
+        list-style: none;
+        overflow: hidden;
+        clip-path: rect(auto auto 0 auto);
+
+        border-inline: 1px solid #fff1;
+        border-bottom: 1px solid color-mix(in srgb, #fff1, var(--blue-100));
+        border-bottom-left-radius: calc(var(--header-height) / 8);
+        border-bottom-right-radius: calc(var(--header-height) / 8);
+
+        transition: clip-path .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+        font-size: calc(var(--header-height) / 3);
+
+        & li > a {
+            position: relative;
+
+            &::after {
+                content: '';
+    
+                position: absolute;
+    
+                top: 0;
+                left: 50%;
+
+                transform: translateX(-50%);
+    
+                width: 0;
+                height: 100%;
+                
+                background-color: color-mix(in srgb, transparent 100%, var(--blue-200));
+                filter: blur(calc(var(--header-height) / 2));
+
+                transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+            }
+            
+
+            &:hover {
+                color: var(--blue-100);
+
+                overflow: hidden;
+
+                transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+                &::after {
+                    width: 100%;
+                    
+                    background-color: color-mix(in srgb, transparent 85%, var(--blue-200));
+                    filter: blur(0);
+                }
+            }
+        }
+    }
+
+    @media (aspect-ratio < 1) {
+        header {
+            --header-height: 4.5rem;
+            padding-inline: 0;
+        }
+
+        .headerTitle {
+            width: 100%;
+            align-items: center;
+        }
+
+        nav {
+            width: 100%;
+            height: fit-content;
+            flex-flow: column nowrap;
         }
     }
 </style>

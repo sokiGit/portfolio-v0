@@ -1,0 +1,96 @@
+---
+import ResponsiveMain from "../../components/ResponsiveMain.astro"
+import Layout from "../../layouts/Layout.astro"
+import Header from "../../components/Header.astro"
+---
+
+<Layout>
+    <Header/>
+    <ResponsiveMain>
+        <b style="color: var(--blue-100);">I currently do not have any certifications</b>, however I have completed the CISCO IT Essentials course in my first year of high school and am currently in the proccess of learning the CCNA Introduction to Netowrks.
+        <h1>Plans for future certifications</h1>
+        I get that certifications are important in our current IT work world, but currently I am unable to purchase the certification courses and exams. However I want to prepare myself for whatever awaits me in the future and for that reason I am looking at the relevant certifications in various areas.<br/>
+        I do not believe certifications are everything and not having them definitely doesn't mean that you do not have the relevant skills, but having them does mean that you have proved that you do have the relevant skills. So I am trying to find out which certs are relevant for me, I try to learn the skills I need to complete them, and I try to complete the practice materials like practice questions to make sure that I can pass them in the future.<br/>
+        Here are some certifications I plan to learn for and complete in the future.
+        <h2>IT Fundamentals</h2>
+        These are certificates that lay out the foundation for other, more advanced and specialised certificates.
+        <ul class="flex-block-list">
+            <li>
+                <h3>CopmTIA</h3>
+                <ul>
+                    <li>ITF+</li>
+                    <li>A+</li>
+                    <li>Tech+</li>
+                    <li>Network+</li>
+                    <li>Linux+</li>
+                </ul>
+            </li>
+            <li>
+                <h3>CISCO</h3>
+                <ul>
+                    <li>IT Essentials</li>
+                    <li>Linux Essentials</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>Cybersecurity</h2>
+        These are certificates that lay out the foundation for other, more advanced and specialised certificates.
+        <ul class="flex-block-list">
+            <li>
+                <h3>CopmTIA</h3>
+                <ul>
+                    <li>Security+</li>
+                </ul>
+            </li>
+            <li>
+                <h3>CISCO</h3>
+                <ul>
+                    <li>Introduction to Security</li>
+                    <li>Ethical Hacker</li>
+                </ul>
+            </li>
+        </ul>
+        
+        <h1>CISCO Badges</h1>
+        <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="ecf09a3b-8f5d-4bda-8d69-6b79f026a847" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+    </ResponsiveMain>
+</Layout>
+
+<style>
+    .flex-block-list {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 1rem;
+
+        padding-inline: 1rem;
+
+        color: var(--blue-100);
+        font-weight: bold;
+
+        & > li {
+            
+            padding-inline: .5em;
+            padding-block: .25em .75em;
+            
+            flex-grow: 1;
+            
+            list-style: none;
+            background-color: #fff1;
+            border-radius: .8rem;
+            
+            & > h3 {
+                margin-block: .2rem .5rem;
+            }
+
+            & ul {
+                padding-left: 1.25em;
+
+                list-style: disc;
+                
+                color: #fff;
+                font-weight: normal;
+            }
+        }
+    }
+</style>

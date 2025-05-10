@@ -52,3 +52,17 @@
 	--gray-800: #4E4547;
 	--gray-900: #3B3334;
 }
+
+a {
+	color: var(--blue-200);
+	border-radius: .5ch;
+	transition: background-color .075s linear,
+				color .075s linear;
+
+	&:hover {
+		background-color: color-mix(in srgb, transparent 85%, var(--blue-100));
+		color: var(--blue-300);
+		transition: background-color .075s linear,
+					color .075s linear;
+	}
+}

@@ -1,11 +1,26 @@
 ---
 import Layout from "../layouts/Layout.astro"
 import Header from "../components/Header.astro"
+import ResponsiveMain from "../components/ResponsiveMain.astro"
 ---
 
 <Layout>
     <Header/>
-    <main>
+    <section id="technologies-navigation">
+        <h1>Technologies & Skills</h1>
+        <ul>
+            <li>
+                <a href="about/programming" style="--c-local-deco: #07fc71">Programming</a>
+            </li>
+            <li>
+                <a href="about/games" style="--c-local-deco: #05c2fc">My Games</a>
+            </li>
+            <li>
+                <a href="about/ui-design" style="--c-local-deco: #e564fc">UI Design</a>
+            </li>
+        </ul>
+    </section>
+    <ResponsiveMain>
         <h1>About Me</h1>
         <p>
             Hello, I'm <b style="color: var(--blue-100)">soki</b>, a passionate young <b style="color: var(--blue-100);">web and game developer</b>, <b style="color: var(--blue-100)">cybersecurity enthusiast</b> and <b style="color: var(--blue-100);">IT student</b>.<br/>
@@ -88,22 +103,10 @@ import Header from "../components/Header.astro"
                 </li>
             </ul>
         </p>
-    </main>
+    </ResponsiveMain>
 </Layout>
 
 <style>
-    main {
-        margin: 1rem auto;
-        padding: 1.5rem 2.25rem;
-
-        background: #fff1;
-        border-radius: .5rem;
-
-        max-width: calc(100% - .5rem);
-        width: max(50%, 80ch);
-        box-sizing: border-box;
-    }
-
     h1, h2 {
         color: var(--blue-100);
         margin-bottom: .75rem;
@@ -151,13 +154,93 @@ import Header from "../components/Header.astro"
         }
     }
 
-    @media (aspect-ratio < .7) {
-        main {
-            width: calc(100% - 1rem);
-        }
+    #technologies-navigation {
+        width: max(50%, 80ch);
+        
+        padding: 1rem 1.5rem;
+        margin: 1rem auto;
 
-        .flex-block-list {
-            padding-inline: .125rem;
+        box-sizing: border-box;
+        
+        background: #fff1;
+        border-radius: .5rem;
+
+        & > ul {
+            display: flex;
+            flex-flow: row wrap;
+            gap: .75rem;
+
+            width: 100%;
+            height: fit-content;
+
+            margin: 0;
+            padding: 0;
+
+            list-style: none;
+            & > li{
+                display: flex;
+                
+                width: fit-content;
+                height: fit-content;
+                flex-grow: 1;
+
+                a {
+                    --c-local-deco: #fff;
+                    
+                    display: flex;
+                    flex-grow: 1;
+
+                    align-items: center;
+                    justify-content: center;
+
+                    padding: .5ch 1.5ch;
+
+                    min-height: 1.75rem;
+
+                    border-radius: .5rem;
+
+                    background-color: #fff1;
+                    border: 1px solid #fff2;
+
+                    color: #fff;
+                    text-decoration: none;
+
+                    box-shadow: 0 0 5rem -5rem color-mix(in srgb, transparent 100%, var(--c-local-deco));
+
+                    transition: all .8s cubic-bezier(0.075, 0.82, 0.165, 1);
+                    transition: scale .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+                    &:hover {
+                        background-color: color-mix(in srgb, #fff1 90%, var(--c-local-deco));
+                        border-color: color-mix(in srgb, transparent 80%, var(--c-local-deco));
+                        color: var(--c-local-deco);
+
+                        box-shadow: 0 0 5rem 0 color-mix(in srgb, transparent 50%, var(--c-local-deco));
+
+                        scale: 1.025;
+
+                        transition: all .8s cubic-bezier(0.075, 0.82, 0.165, 1);
+                        transition: scale .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+                    }
+                }
+            } 
+        }
+    }
+
+    @media (aspect-ratio < .7) {
+        #technologies-navigation {
+            width: calc(100% - .5rem);
+
+            padding-inline: .5rem;
+
+            font-size: 1.125rem;
+
+            & > ul {
+                gap: .5rem;
+                & > li > a {
+                    padding-block: 1ch;
+                }
+            }
         }
     }
 </style>

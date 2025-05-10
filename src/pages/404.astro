@@ -7,6 +7,7 @@ import Layout from "../layouts/Layout.astro";
     <main>
         <h1>404 - Not Found</h1>
         <p>We're sorry.</p>
+        <a href="/">Go home</a>
         <img src="https://http.cat/404" alt="Error 404 - Not Found"/>
     </main>
 </Layout>
@@ -24,6 +25,12 @@ import Layout from "../layouts/Layout.astro";
 
         justify-content: center;
         align-items: center;
+
+        & > img {
+            max-width: 100%;
+            max-height: 100%;
+            height: auto;
+        }
     }
 
     h1 {
@@ -32,5 +39,61 @@ import Layout from "../layouts/Layout.astro";
 
     h1, p {
         margin: 0;
+    }
+
+    a {
+        position: relative;
+
+        padding: .75rem 1.5rem;
+
+        background: var(--blue-100);
+        border-radius: .5rem;
+        border: .2rem solid var(--blue-100);
+        overflow: hidden;
+        
+        color: var(--blue-900);
+        text-decoration: none;
+
+        box-shadow: 0 0 2rem 0 var(--blue-100);
+
+        z-index: 9999;
+        transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+        &::before {
+            content: '';
+
+            position: absolute;
+            
+            width: 0;
+            height: auto;
+            aspect-ratio: 1;
+
+            z-index: -1;
+
+            transform: translate(-50%, -50%);
+            border-radius: 100vw;
+
+            top: 50%;
+            left: 50%;
+
+            background-color: #fff;
+            
+            transition: all .15s cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+        
+        &:hover {
+            /*scale: 1.1;*/
+            
+            background: #fff;
+
+            color: var(--blue-600);
+            
+            transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+            
+            &::before {
+                width: 100%;
+                transition: all .15s cubic-bezier(0.075, 0.82, 0.165, 1);
+            }
+        }
     }
 </style>

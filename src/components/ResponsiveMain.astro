@@ -1,0 +1,28 @@
+---
+
+---
+
+<main>
+    <slot /> <!-- This is where the content inside <ResponsiveMain>Content here</ResponsiveMain> is inserted. -->
+</main>
+
+<style>
+    main {
+        margin: 1rem auto;
+        padding: 1.5rem 2.25rem;
+        
+        background: #fff1;
+        border-radius: .5rem;
+        
+        max-width: calc(100% - .5rem);
+        width: max(50%, 80ch);
+        box-sizing: border-box;
+    }
+
+    @media (aspect-ratio < .7) {
+        main {
+            width: calc(100% - .5rem);
+            padding-inline: .75rem;
+        }
+    }
+</style>

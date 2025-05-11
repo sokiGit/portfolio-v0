@@ -2,6 +2,7 @@
 import ResponsiveMain from "../../components/ResponsiveMain.astro"
 import Layout from "../../layouts/Layout.astro"
 import Header from "../../components/Header.astro"
+import CopmuterHardwareBasicsBadge from "../../assets/certs/cisco/computer-hardware-basics.png"
 ---
 
 <Layout>
@@ -58,7 +59,7 @@ import Header from "../../components/Header.astro"
         <ul class="badge-list">
             <li class="badge-block">
                 <figure>
-                    <img src="/src/assets/certs/cisco/computer-hardware-basics.png" alt="Computer Hardware Basics Badge">
+                    <img src={CopmuterHardwareBasicsBadge.src} alt="Computer Hardware Basics Badge">
                     <figcaption>Computer Hardware Basics</figcaption>
                 </figure>
 

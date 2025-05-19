@@ -30,19 +30,7 @@ const navLinks = [
               {link.name === 'Projects' ? 
               <ul class="header-nav-dropdown">
                 <li>
-                    <a href="/projects/project-a">Project A</a>
-                </li>
-                <li>
-                    <a href="/projects/project-b">Project B</a>
-                </li>
-                <li>
-                    <a href="/projects/project-c">Project C</a>
-                </li>
-                <li>
-                    <a href="/projects/project-d">Project D</a>
-                </li>
-                <li>
-                    <a href="/projects/project-e">Project E</a>
+                    <a href="/projects/ui-design/google-fade">Google Fade</a>
                 </li>
               </ul> : null}
             </li>
@@ -206,7 +194,6 @@ const navLinks = [
 
         width: max-content;
         min-width: 100%;
-        max-width: 100%;
         height: fit-content;
 
         background: #fff1;
@@ -223,43 +210,51 @@ const navLinks = [
 
         font-size: calc(var(--header-height) / 3);
 
-        & li > a {
-            position: relative;
+        & > li {
+            width: max-content;
 
-            &::after {
-                content: '';
-    
-                position: absolute;
-    
-                top: 0;
-                left: 50%;
+            & > a {
+                        position: relative;
 
-                transform: translateX(-50%);
-    
-                width: 0;
-                height: 100%;
+                        padding-inline: 1rem;
+
+                        width: max-content;
+
+                        &::after {
+                            content: '';
                 
-                background-color: color-mix(in srgb, transparent 100%, var(--blue-200));
-                filter: blur(calc(var(--header-height) / 2));
+                            position: absolute;
+                
+                            top: 0;
+                            left: 50%;
 
-                transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1);
-            }
-            
+                            transform: translateX(-50%);
+                
+                            width: 0;
+                            height: 100%;
+                            
+                            background-color: color-mix(in srgb, transparent 100%, var(--blue-200));
+                            filter: blur(calc(var(--header-height) / 2));
 
-            &:hover {
-                color: var(--blue-100);
+                            transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+                        }
+                        
 
-                overflow: hidden;
+                        &:hover {
+                            color: var(--blue-100);
 
-                transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+                            overflow: hidden;
 
-                &::after {
-                    width: 100%;
-                    
-                    background-color: color-mix(in srgb, transparent 85%, var(--blue-200));
-                    filter: blur(0);
-                }
-            }
+                            transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+                            &::after {
+                                width: 100%;
+                                
+                                background-color: color-mix(in srgb, transparent 85%, var(--blue-200));
+                                filter: blur(0);
+                            }
+                        }
+                    }
         }
     }
 

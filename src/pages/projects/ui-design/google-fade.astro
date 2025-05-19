@@ -1,0 +1,122 @@
+---
+/* Components */
+import Header from "../../../components/Header.astro"
+import Layout from "../../../layouts/Layout.astro"
+import ResponsiveMain from "../../../components/ResponsiveMain.astro"
+
+/* Images */
+import Banner from "../../../assets/GoogleFadeAppIconRedesign.png"
+---
+
+<Layout>
+    <Header/>
+    <ResponsiveMain>
+        <h1>Google Fade App Icon Re-design</h1>
+        <p>
+            Had fun re-designing Google apps' icons, inspired by the recent change of the official Google logo to use a gradient of colors.
+        </p>
+        <img src={Banner.src} alt="Banner" class="banner">
+        <h2>Downloads</h2>
+        Sorry, no time to make a download functionality haha<br/>
+        <b style="color: var(--blue-100);">    
+            Left-click or hold on the image and select "Save image as" :)
+        </b>
+        <ul class="download-list">
+            <li>
+                <h3>
+                    YouTube
+                </h3>
+                <a href="/icons/google-fade/YouTube_Fade_ColorBG.png">Fade BG</a>
+                <a href="/icons/google-fade/YouTube_Fade.png">White BG</a>
+            </li>
+            <li>
+                <h3>
+                    Gmail
+                </h3>
+                <a href="/icons/google-fade/Gmail_Fade_ColorBG.png">Fade BG</a>
+                <a href="/icons/google-fade/Gmail_Fade.png">White BG</a>
+            </li>
+            <li>
+                <h3>
+                    Maps
+                </h3>
+                <a href="/icons/google-fade/Maps_Fade_ColorBG.png">Fade BG</a>
+                <a href="/icons/google-fade/Maps_Fade.png">White BG</a>
+            </li>
+            <li>
+                <h3>
+                    Wallet
+                </h3>
+                <a href="/icons/google-fade/Wallet_Fade_ColorBG.png">Fade BG</a>
+                <a href="/icons/google-fade/Wallet_Fade.png">White BG</a>
+            </li>
+            <li>
+                <h3>
+                    Play Store
+                </h3>
+                <a href="/icons/google-fade/PlayStore_Fade_ColorBG.png">Fade BG</a>
+                <a href="/icons/google-fade/PlayStore_Fade.png">White BG</a>
+            </li>
+            <li>
+                <h3>
+                    Files
+                </h3>
+                <a href="/icons/google-fade/Files_Fade_ColorBG.png">Fade BG</a>
+                <a href="/icons/google-fade/Files_Fade.png">White BG</a>
+            </li>
+            <li>
+                <h3>
+                    Drive
+                </h3>
+                <a href="/icons/google-fade/Drive_Fade_ColorBG.png">Fade BG</a>
+                <a href="/icons/google-fade/Drive_Fade.png">White BG</a>
+            </li>
+        </ul>
+    </ResponsiveMain>
+
+</Layout>
+
+<style>
+    img.banner {
+        width: 100%;
+        height: auto;
+    }
+
+    .download-list {
+        display: flex;
+        
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 1rem;
+        
+        list-style: none;
+        
+        & > li {
+            padding: 1.25rem .5rem;
+
+            border-radius: .5rem;
+
+            display: flex;
+            
+            flex-flow: row wrap;
+            justify-content: space-evenly;
+            gap: .35rem;
+            
+            background-color: #fff1;
+
+            & > h3 {
+                margin: 0;
+                padding-bottom: .25rem;
+                width: 100%;
+
+                text-align: center;
+            }
+
+            & > a {
+                background-color: #fff1;
+                padding: .25rem .65rem;
+            }
+        }
+    }
+</style>

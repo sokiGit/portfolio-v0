@@ -24,6 +24,7 @@ import ResponsiveMain from "../components/ResponsiveMain.astro"
         </ul>
     </section>
     <ResponsiveMain>
+        <a href="/about/certs" id="certs-call-to-action">Check out my certs!</a>
         <h1>About Me</h1>
         <p>
             Hello, I'm <b style="color: var(--blue-100)">soki</b>, a passionate young <b style="color: var(--blue-100);">web and game developer</b>, <b style="color: var(--blue-100)">cybersecurity enthusiast</b> and <b style="color: var(--blue-100);">IT student</b>.<br/>
@@ -227,6 +228,36 @@ import ResponsiveMain from "../components/ResponsiveMain.astro"
                     }
                 }
             } 
+        }
+    }
+
+    #certs-call-to-action {
+        display: flex;
+
+        width: fit-content;
+        
+        max-width: 100%;
+        margin: 1rem auto;
+        
+        padding: 1rem 2rem;
+
+        background: color-mix(in srgb, transparent 80%, currentColor);
+        border: 1px solid currentColor;
+        box-shadow: 0 0 2.5rem -.5rem currentColor;
+        border-radius: 1rem;
+        
+        color: #fc6483;
+        text-decoration: none;
+        font-size: 1.25rem;
+
+        transition: scale .3s cubic-bezier(0.075, 0.82, 0.165, 1), box-shadow .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+        
+        &:hover {
+            background: color-mix(in srgb, transparent 65%, currentColor);
+            box-shadow: 0 0 2.5rem -.25rem currentColor;
+
+            scale: 1.125;
+            transition: scale .3s cubic-bezier(0.075, 0.82, 0.165, 1), box-shadow .3s cubic-bezier(0.075, 0.82, 0.165, 1);
         }
     }
 

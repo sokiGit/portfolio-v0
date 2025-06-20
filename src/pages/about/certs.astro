@@ -5,12 +5,56 @@ import Header from "../../components/Header.astro"
 
 import CopmuterHardwareBasicsBadge from "../../assets/certs/cisco/computer-hardware-basics.png"
 import CCNAIntroductionToNetworksBadge from "../../assets/certs/cisco/ccna-introduction-to-networks.png"
+import ITEssentialsBadge from "../../assets/certs/cisco/it-essentials.png"
 ---
 
 <Layout>
     <Header/>
     <ResponsiveMain>
-        <b style="color: var(--blue-100);">I currently do not have any certifications</b>, however I have completed the CISCO IT Essentials course in my first year of high school and am currently in the proccess of learning the CCNA Introduction to Netowrks.
+<h1>CISCO Badges</h1>
+        These are badges that I have acquired for completing a CISCO course.
+        I have already completed the CISCO IT Essentials course in my first year of high school, however I am unable to find the certificate of course completion or even any sign of me ever participating in that course, so there was probably some kind of wipe that cleaned my Netacad profile.
+        <ul class="badge-list">
+            <li class="badge-block">
+                <figure>
+                    <img src={CopmuterHardwareBasicsBadge.src} alt="Computer Hardware Basics Badge">
+                    <figcaption>Computer Hardware Basics</figcaption>
+                </figure>
+
+                <div>
+                    <a href="https://www.credly.com/badges/ecf09a3b-8f5d-4bda-8d69-6b79f026a847/public_url">
+                        Verify
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1rem" viewBox="0 -960 960 960" width="auto" fill="var(--blue-800)"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z"/></svg>
+                    </a>
+                </div>
+            </li>
+            <li class="badge-block">
+                <figure>
+                    <img src={CCNAIntroductionToNetworksBadge.src} alt="CCNA: Introduction to Networks Badge">
+                    <figcaption>CCNA: Introduction to Networks</figcaption>
+                </figure>
+
+                <div>
+                    <a href="https://www.credly.com/badges/45d048f5-cbb0-4da9-9c95-d2baa11c1d0e/public_url">
+                        Verify
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1rem" viewBox="0 -960 960 960" width="auto" fill="var(--blue-800)"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z"/></svg>
+                    </a>
+                </div>
+            </li>
+            <li class="badge-block">
+                <figure>
+                    <img src={ITEssentialsBadge.src} alt="CCNA: IT Essentials Badge">
+                    <figcaption>IT Essentials</figcaption>
+                </figure>
+
+                <div>
+                    <a href="https://www.credly.com/badges/dc3ea796-ac27-43d7-8989-0e8b84d092b7/public_url">
+                        Verify
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1rem" viewBox="0 -960 960 960" width="auto" fill="var(--blue-800)"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z"/></svg>
+                    </a>
+                </div>
+            </li>
+        </ul>
         <h1>Plans for future certifications</h1>
         I get that certifications are important in our current IT work world, but currently I am unable to purchase the certification courses and exams. However I want to prepare myself for whatever awaits me in the future and for that reason I am looking at the relevant certifications in various areas.<br/>
         I do not believe certifications are everything and not having them definitely doesn't mean that you do not have the relevant skills, but having them does mean that you have proved that you do have the relevant skills. So I am trying to find out which certs are relevant for me, I try to learn the skills I need to complete them, and I try to complete the practice materials like practice questions to make sure that I can pass them in the future.<br/>
@@ -31,14 +75,15 @@ import CCNAIntroductionToNetworksBadge from "../../assets/certs/cisco/ccna-intro
             <li>
                 <h3>CISCO</h3>
                 <ul>
-                    <li>IT Essentials</li>
+                    <li>IT Essentials (✅)</li>
+                    <li>Introduction to Networks (✅)</li>
+                    <li>Hardware Basics (✅)</li>
                     <li>Linux Essentials</li>
                 </ul>
             </li>
         </ul>
 
         <h2>Cybersecurity</h2>
-        These are certificates that lay out the foundation for other, more advanced and specialised certificates.
         <ul class="flex-block-list">
             <li>
                 <h3>CopmTIA</h3>
@@ -50,40 +95,12 @@ import CCNAIntroductionToNetworksBadge from "../../assets/certs/cisco/ccna-intro
                 <h3>CISCO</h3>
                 <ul>
                     <li>Introduction to Security</li>
+                    <li>Cybersecurity Essentials</li>
+                    <li>Endpoint Security</li>
                     <li>Ethical Hacker</li>
+                    <li>Network Defense</li>
+                    <li>Cyber Threat Management</li>
                 </ul>
-            </li>
-        </ul>
-        
-        <h1>CISCO Badges</h1>
-        These are badges that I have acquired for completing a CISCO course.
-        I have already completed the CISCO IT Essentials course in my first year of high school, however I am unable to find the certificate of course completion or even any sign of me ever participating in that course, so there was probably some kind of wipe that cleaned my Netacad profile.
-        <ul class="badge-list">
-            <li class="badge-block">
-                <figure>
-                    <img src={CopmuterHardwareBasicsBadge.src} alt="Computer Hardware Basics Badge">
-                    <figcaption>Computer Hardware Basics</figcaption>
-                </figure>
-
-                <div>
-                    <a href="https://www.credly.com/badges/ecf09a3b-8f5d-4bda-8d69-6b79f026a847/public_url">
-                        Verify
-                        <svg xmlns="http://www.w3.org/2000/svg" height="1rem" viewBox="0 -960 960 960" width="auto" fill="var(--blue-800)"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z"/></svg>
-                    </a>
-                </div>
-            </li>
-            <li class="badge-block">
-                <figure>
-                    <img src={CCNAIntroductionToNetworksBadge.src} alt="Computer Hardware Basics Badge">
-                    <figcaption>CCNA: Introduction to Networks</figcaption>
-                </figure>
-
-                <div>
-                    <a href="https://www.credly.com/badges/45d048f5-cbb0-4da9-9c95-d2baa11c1d0e/public_url">
-                        Verify
-                        <svg xmlns="http://www.w3.org/2000/svg" height="1rem" viewBox="0 -960 960 960" width="auto" fill="var(--blue-800)"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z"/></svg>
-                    </a>
-                </div>
             </li>
         </ul>
     </ResponsiveMain>

@@ -1,8 +1,26 @@
 ---
 import Layout from "../layouts/Layout.astro"
 import Header from "../components/Header.astro"
+
+import ResponsiveMain from "../components/ResponsiveMain.astro"
 ---
 
 <Layout>
     <Header/>
+
+    <ResponsiveMain>
+        This site is still a prototype :)
+        <h1>My Projects</h1>
+        <ul>
+            <li>
+                <a href="/projects/ui-design/google-fade">Google Fade</a> A set of icons inspired by Google's recent change to a gradient in their logo.
+            </li>
+            <li>
+                <a href="https://github.com/search?q=owner%3AsokiGit+language%3ARust&type=repositories">Rust projects (Github)</a> I really like Rust, so I decided to make some of my learning progress and my projects public.
+            </li>
+            <li>
+                <a href="https://github.com/sokiGit/portfolio-v0">This page</a> is open-source on Github.
+            </li>
+        </ul>
+    </ResponsiveMain>
 </Layout>

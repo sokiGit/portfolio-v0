@@ -1,7 +1,7 @@
 ---
 title: "Subnetting basics"
 date: 2023-06-01T00:00:00.000Z
-categories: [Testing, Debug]
+categories: [Networking, School]
 summary: "This is the first portfolio post. It is intended for testing."
 ---
 # Subnetting

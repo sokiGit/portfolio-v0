@@ -24,7 +24,10 @@ import ResponsiveMain from "../components/ResponsiveMain.astro"
         </ul>
     </section>
     <ResponsiveMain>
-        <a href="/about/certs" id="certs-call-to-action">Check out my certs!</a>
+        <span>
+            <a href="/about/certs" id="certs-call-to-action">Check out my certs!</a>
+            <a href="/portfolio" id="portfolio-call-to-action">Check out my portfolio!</a>
+        </span>
         <h1>About Me</h1>
         <p>
             Hello, I'm <b style="color: var(--blue-100)">soki</b>, a passionate young <b style="color: var(--blue-100);">web and game developer</b>, <b style="color: var(--blue-100)">cybersecurity enthusiast</b> and <b style="color: var(--blue-100);">IT student</b>.<br/>
@@ -231,22 +234,29 @@ import ResponsiveMain from "../components/ResponsiveMain.astro"
         }
     }
 
-    #certs-call-to-action {
+    span:has(a[id$="-call-to-action"]) {
         display: flex;
+        flex-flow: row;
+        gap: 1rem;
+        justify-content: space-evenly;
+        padding: 1rem 2rem;
+    }
+
+    a[id$="-call-to-action"] {
+        display: inline-flex;
 
         width: fit-content;
         
         max-width: 100%;
-        margin: 1rem auto;
         
         padding: 1rem 2rem;
 
-        background: color-mix(in srgb, transparent 80%, currentColor);
-        border: 1px solid currentColor;
-        box-shadow: 0 0 2.5rem -.5rem currentColor;
+        background: color-mix(in srgb, transparent 85%, currentColor);
+        border: 1px solid color-mix(in srgb, transparent 50%, currentColor);
+        box-shadow: 0 0 2.5rem -.5rem color-mix(in srgb, transparent 50%, currentColor);
         border-radius: 1rem;
         
-        color: #fc6483;
+        color: #fff;
         text-decoration: none;
         font-size: 1.25rem;
 
@@ -255,9 +265,17 @@ import ResponsiveMain from "../components/ResponsiveMain.astro"
         &:hover {
             background: color-mix(in srgb, transparent 65%, currentColor);
             box-shadow: 0 0 2.5rem -.25rem currentColor;
-
+            border-color: currentColor;
             scale: 1.125;
-            transition: scale .3s cubic-bezier(0.075, 0.82, 0.165, 1), box-shadow .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+            transition: scale .3s cubic-bezier(0.075, 0.82, 0.165, 1), box-shadow .3s cubic-bezier(0.075, 0.82, 0.165, 1), border-color .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+
+        &#certs-call-to-action {
+            color: #fc64bd;
+        }
+
+        &#portfolio-call-to-action {
+            color: #64d8fc;
         }
     }
 

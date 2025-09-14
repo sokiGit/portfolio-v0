@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
@@ -11,7 +11,16 @@
 		<slot />
 
 		<footer>
-			No Licence, Source: <a href="https://github.com/sokigit/portfolio-v0">github.com/sokiGit/portfolio-v0</a>
+			<div>
+				The source code for this website is published under the <a href="https://opensource.org/license/MIT" target="_blank">MIT License</a> (Copyright &copy; 2025 sokiGit)
+			</div>
+			<div>
+				All content of the website, like portfolio articles, personal projects, etc. is <b>all rights reserved</b>.
+				For more info, read the <a href="https://github.com/sokiGit/portfolio-v0/blob/main/README.md" target="_blank">README.md</a>.
+			</div>
+			<div>
+				Source: <a href="https://github.com/sokigit/portfolio-v0">github.com/sokiGit/portfolio-v0</a>
+			</div>
 		</footer>
 	</body>
 </html>
@@ -33,7 +42,7 @@
 	}
 
 	footer {
-		padding: 1rem;
+		padding: 2rem 1rem;
 		
 		width: 100%;
 		height: auto;
@@ -42,5 +51,9 @@
 		background: #fff1;
 		backdrop-filter: blur(16rem);
 		text-align: center;
+
+		display: flex;
+		flex-flow: column;
+		gap: 1rem;
 	}
 </style>

@@ -1,0 +1,93 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import ResponsiveMain from "../components/ResponsiveMain.astro";
+
+// Import the getCollection function to fetch your content
+import { getCollection } from "astro:content";
+
+// Fetch the 'portfolio' collection, which contains all your .md files
+const portfolio = await getCollection("portfolio");
+
+// Sort the posts by date in descending order (newest first).
+// This ensures the oldest posts are at the bottom.
+portfolio.sort((a, b) => {
+    return new Date(b.data.date).getTime() - new Date(a.data.date).getTime();
+});
+---
+
+<Layout>
+    <Header />
+
+    <ResponsiveMain>
+        <i>
+            This page is under construction :3
+        </i>
+        <p>
+            While the website's source code is published under the <a href="https://opensource.org/license/MIT" target="_blank">MIT License</a>, I <b>reserve all rights</b> to all the content published here, like the articles in this portfolio, my projects, etc. For more information, read <a href="https://github.com/sokiGit/portfolio-v0/blob/main/README.md" target="_blank">README.md</a>.
+        </p>
+
+        <!-- Use a loop to iterate over each post in the sorted collection -->
+        {
+            portfolio.map(async (submission) => {
+                // Get the title from the submission's data
+                const title = submission.data.title || "Untitled Post";
+
+                // Await the render function to get the component for this post
+                const { Content } = await submission.render();
+
+                return (
+                    // Wrap the rendered content in a container, adding a title
+                    <article class="portfolio-article" id={submission.slug}>
+                        <section class="portfolio-article-metadata">
+                            <h1>{title}</h1>
+                            <i class="portfolio-article-date">{submission.data.date || "Unknown date."}</i>
+                            <i class="portfolio-article-categories">Categories: {submission.data.categories.toString() || "None"}</i>
+                        </section>
+                        <section class="portfolio-article-content">
+                            <Content />
+                        </section>
+                    </article>
+                );
+            })
+        }
+    </ResponsiveMain>
+</Layout>
+
+<style>
+    .portfolio-article {
+        border-top: #fff2 solid 1px;
+        margin-top: 2rem;
+    }
+    
+    .portfolio-article-metadata {
+        background-color: #ffffff04;
+        padding: .5rem;
+        padding-top: .25rem;
+        margin-top: 2rem;
+        border-radius: .5rem;
+
+        display: flex;
+        flex-flow: column;
+
+        & > h1 {
+            margin: 0;
+            color: var(--blue-100);
+        }
+    }
+
+    .portfolio-article-date {
+        color: #aaa;
+    }
+
+    .portfolio-article-categories {
+        color: #aaa;
+    }
+
+    .portfolio-article-content {
+        background-color: #ffffff04;
+        border-radius: .5rem;
+        padding: .5rem 1rem;
+        margin-top: .5rem;
+    }
+</style>

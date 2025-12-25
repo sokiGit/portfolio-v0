@@ -65,4 +65,23 @@ a {
 		transition: background-color .075s linear,
 					color .075s linear;
 	}
+
+	&.external-link {
+		position: relative;
+		display: inline-flex;
+		flex-flow: row wrap;
+		align-items: center;
+		gap: .25ch;
+	}
+
+	&.external-link::after {
+		content: '';
+		position: relative;
+		mask-image: url(/icons/util/external-link.svg);
+		mask-size: contain;
+		mask-position: center center;
+		background-color: currentColor;
+		height: 1ch;
+		width: 1ch;
+	}
 }

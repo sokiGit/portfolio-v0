@@ -4,7 +4,7 @@ date: 2024-01-28T00:00:00.000Z
 categories: [Programming, Roblox, Personal]
 summary: "This is the first portfolio post. It is intended for testing."
 ---
-# My Own Operating System in Roblox
+## My Own Operating System in Roblox
 
 On January 28th, out of pure boredom, I dove into an interesting project: creating a replica of a desktop environment directly in Roblox. Thanks to my experience with UI design, I had the visual part finished in no time. This inspired me to go further and begin programming a small, but pretty functional, operating system.
 

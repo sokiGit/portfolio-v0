@@ -1,5 +1,5 @@
 ---
-title: "Testing Post no. 1 Ut blanditiis deserunt voluptatem corporis. Voluptatem sed sit autem pariatur ducimus error. Voluptas et sit voluptates enim."
+title: "Testing Post no. 1"
 date: 2023-01-01T00:00:00.000Z
 categories: [Testing, Debug]
 summary: "This is the first portfolio post. It is intended for testing."
